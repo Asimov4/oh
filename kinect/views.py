@@ -16,7 +16,7 @@ def simpleemotion(request):
     session = get_object_or_404(Session, pk=request.GET.get('session', ''))
     data = request.GET.get('data', '')
                                    
-    obj = SessionData(session=session, data_name="simpleemotion", data_type="SEJ", url=data)
+    obj = SessionData(session=session, data_name="simpleemotion", data_type="SEJ", url=data, text=data)
     obj.save()
     return HttpResponse("OK")
 
@@ -25,4 +25,4 @@ def emotiongraph(request,player_id,session_id):
     session_data = SessionData.objects.all().filter(session=session_id)
     for data in session_data:
         output += data.url
-    return HttpResponse("OK" + output)
+    return HttpResponse(output)

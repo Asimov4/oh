@@ -26,7 +26,7 @@ class Player(models.Model):
     updated_at = models.DateTimeField(auto_now = True)
 
     def __unicode__(self):
-        return self.first_name + self.last_name
+        return self.first_name + ' ' + self.last_name
 
 class Session(models.Model):
     player = models.ForeignKey('Player')
@@ -45,7 +45,8 @@ class SessionData(models.Model):
     data_type = models.CharField(max_length=3,
                                 choices=ASSET_TYPE,
                                 default=TEXT)
-    url = models.CharField(max_length=6000)
+    url = models.FileField(upload_to="assets/sessions/")
+    text = models.CharField(max_length=3000)
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
 
