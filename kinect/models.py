@@ -58,7 +58,7 @@ class Asset(models.Model):
     data_type = models.CharField(max_length=3,
                                 choices=ASSET_TYPE,
                                 default=TEXT)
-    url = models.CharField(max_length=255)
+    url = models.FileField(upload_to="assets/parents/")
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
 

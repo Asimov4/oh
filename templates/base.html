@@ -1,0 +1,66 @@
+{% load staticfiles %}
+
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Oh! - Teaching Children Facial Expressions with Kinect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+	<style>
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+      background-color: #ddd;
+    }
+	
+	</style>
+	
+  </head>
+
+  <body>
+	
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span12 pagination-centered">
+            <button clas="btn btn-primary"><a href="http://oh.cloudapp.net">Home</a></button>
+            <button clas="btn btn-primary"><a href="http://oh.cloudapp.net/oh/1">Example Player Profile One</a></button>
+            <button clas="btn btn-primary"><a href="http://oh.cloudapp.net/oh/2">Example Player Profile Two</a></button>
+				<img src="/oh/{{ STATIC_URL }}assets/img/oh_logo.png">
+			</div>
+		</div>
+		
+	</div>
+	
+	 <div class="container marketing" style="margin-bottom: 50px">
+
+	 	{% block content %}
+		{% endblock %}
+	  
+      <!-- FOOTER -->
+      <footer style="padding-top: 50px">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <button class="btn btn-warning"><a href="http://oh.cloudapp.net/oh/admin/">Parent Login</a></button>
+        <button class="btn btn-warning"><a href="http://oh.cloudapp.net/oh/admin/">Therapist Login</a></button>
+        <button class="btn btn-warning"><a href="http://oh.cloudapp.net/oh/admin/">Teacher Login</a></button>
+        <p>&copy; 2013 Oh! &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a> &middot; <a href="https://twitter.com/OhKinect">Twitter</a></p>
+      </footer>
+	 
+
+    </div><!-- /.container -->
+  </body>
+</html>

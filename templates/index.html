@@ -1,49 +1,7 @@
+{% extends "base.html" %}
 {% load staticfiles %}
 
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Oh!</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="../assets/js/html5shiv.js"></script>
-    <![endif]-->
-
-	<style>
-    /* GLOBAL STYLES
-    -------------------------------------------------- */
-    /* Padding below the footer and lighter body text */
-
-    body {
-      background-color: #ddd;
-    }
-	
-	</style>
-	
-  </head>
-
-  <body>
-	
-	<div class="container">
-		<div class="row-fluid">
-			<div class="span12 pagination-centered">
-				<img src="/oh/{{ STATIC_URL }}assets/img/oh_logo.png">
-			</div>
-		</div>
-		
-	</div>
-	
-	 <div class="container marketing" style="margin-bottom: 50px">
+{% block content %}
 
 	 <div class="row">
         <div class="span12 pagination-centered">
@@ -51,27 +9,4 @@
         </div><!-- /.span4 -->
       </div><!-- /.row -->
 
-	  <div class="row">
-        <div class="span12 pagination-centered">
-          <p>Hi {{ player.first_name }}! Watch your favorite movies!</p>
-        </div><!-- /.span4 -->
-		
-		<div class="span12 pagination-centered">
-			<iframe width="560" height="315" src="http://www.youtube.com/embed/videoseries?list={{ player.youtube_channel }}" frameborder="0" allowfullscreen></iframe>
-        </div><!-- /.span4 -->
-      </div><!-- /.row -->
-	  
-	  <div class="span12 pagination-centered">
-          <p><a href="http://www.patientslikeme.com/patients/view/{{ player.patientslikeme_id }}">View {{ player.first_name }}'s profile.</a></p>
-      </div><!-- /.span4 -->
-	  
-      <!-- FOOTER -->
-      <footer style="padding-top: 50px">
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a> &middot; <a href="https://twitter.com/OhKinect">Twitter</a></p>
-      </footer>
-	 
-
-    </div><!-- /.container -->
-  </body>
-</html>
+{% endblock %}

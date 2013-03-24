@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+	 <div class="row">
+        <div class="span12 pagination-centered">
+          <p>A #Kinect-based #app that teaches autistic children facial cues. #autism This is an #autismhack project</p>
+        </div><!-- /.span4 -->
+      </div><!-- /.row -->
+
+	  <div class="row">
+        <div class="span12 pagination-centered">
+          <p>Hi {{ player.first_name }}! Watch your favorite movies!</p>
+        </div><!-- /.span4 -->
+		
+		<div class="span12 pagination-centered">
+			<iframe width="560" height="315" src="http://www.youtube.com/embed/videoseries?list={{ player.youtube_channel }}" frameborder="0" allowfullscreen></iframe>
+        </div><!-- /.span4 -->
+      </div><!-- /.row -->
+	  
+	  <div class="span12 pagination-centered">
+          <p><a href="http://www.patientslikeme.com/patients/view/{{ player.patientslikeme_id }}">View {{ player.first_name }}'s profile.</a></p>
+      </div><!-- /.span4 -->
+
+{% endblock %}
